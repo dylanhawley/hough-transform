@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
     return -1;
   }
   // Edge detection
-  Canny(src, dst, 50, 200, 3);
+  Canny(src, dst, 350, 900, 3);
   // Copy edges to the images that will display the results in BGR
   cvtColor(dst, cdst, COLOR_GRAY2BGR);
   cdstP = cdst.clone();
