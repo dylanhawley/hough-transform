@@ -39,8 +39,6 @@ int main(int argc, char** argv) {
     pt2.x = cvRound(x0 - 1000*(-b));
     pt2.y = cvRound(y0 - 1000*(a));
     line( cdst, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
-    cout << "* line " << i << ": (" << pt1.x << ", " << pt1.y << "), (";
-    cout << pt2.x << ", " << pt2.y << ")" << endl;
   }
   // Probabilistic Line Transform
   vector<Vec4i> linesP; // will hold the results of the detection
@@ -49,6 +47,8 @@ int main(int argc, char** argv) {
   for (size_t i = 0; i < linesP.size(); i++) {
     Vec4i l = linesP[i];
     line(cdstP, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(255,0,0), 1, LINE_AA);
+        cout << "* line " << i << ": (" << l[0] << ", " << l[1] << "), (";
+    cout << l[2] << ", " << l[3] << ")" << endl;
   }
   // Show results
   // imshow("Source", src);
